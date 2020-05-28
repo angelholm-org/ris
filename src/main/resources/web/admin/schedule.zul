@@ -1,0 +1,30 @@
+<zk >
+    <window
+            viewModel="@id('vm') @init('org.ddmed.ris.view.ScheduleVM')">
+    <hbox>
+        <button label="Add" onClick="@command('add')"></button>
+        <button label="Edit" onClick="@command('edit')"></button>
+        <button label="Delete" onClick="@command('delete')"></button>
+    </hbox>
+    <hbox>
+        <listbox model="@bind(vm.scheduleList)">
+            <listhead sizable="true">
+                <listheader align="center" label="id" />
+                <listheader align="center" label="active" />
+                <listheader align="center" label="actor"/>
+                <listheader align="center" label="comment"/>
+            </listhead>
+            <template name="model" var="item">
+                <listitem>
+                    <listcell label="@load(item.getId())"/>
+                    <listcell label="@load(item.getActive())"/>
+                    <listcell label="@load(item.getActor())"/>
+                    <listcell label="@load(item.getComment())"/>
+                </listitem>
+            </template>
+
+        </listbox>
+    </hbox>
+    </window>
+
+</zk>

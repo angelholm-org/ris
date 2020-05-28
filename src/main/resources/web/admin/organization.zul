@@ -1,0 +1,4 @@
+<window viewModel="@id('vm') @init('org.ddmed.ris.view.OrganizationVM')">
+    <button id="save" label="Save" onClick="@command('save')"/>
+</window>
+

@@ -1,0 +1,22 @@
+<zk>
+    <tabbox orient="left" hflex="1">
+        <tabs width="10%">
+            <tab>Schedulers</tab>
+            <tab>Organizations</tab>
+            <tab>Practitioners</tab>
+            <tab>PractitionersRole</tab>
+            <tab>HealthCareService</tab>
+            <tab>Location</tab>
+            <tab>Device</tab>
+        </tabs>
+        <tabpanels>
+            <tabpanel><include id="schedule" src="~./admin/schedule.zul"/></tabpanel>
+            <tabpanel><include id="organization" src="~./admin/organization.zul"/></tabpanel>
+            <tabpanel><include id="practitioner" src="~./admin/practitioner.zul"/></tabpanel>
+            <tabpanel><include id="practitionerrole" src="~./admin/practitionerrole.zul"/></tabpanel>
+            <tabpanel><include id="healthcareservice" src="~./admin/healthcareservice.zul"/></tabpanel>
+            <tabpanel><include id="location" src="~./admin/location.zul"/></tabpanel>
+            <tabpanel><include id="device" src="~./admin/device.zul"/></tabpanel>
+        </tabpanels>
+    </tabbox>
+</zk>

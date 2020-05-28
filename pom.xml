@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.ddmed</groupId>
+    <artifactId>ris</artifactId>
+    <version>1.0.0</version>
+    <name>ris</name>
+    <description>RIS Project</description>
+
+    <properties>
+        <java.version>11</java.version>
+        <zkspringboot.version>2.3.0</zkspringboot.version>
+    </properties>
+    <repositories>
+        <repository>
+            <id>ZK CE</id>
+            <name>ZK CE Repository</name>
+            <url>http://mavensync.zkoss.org/maven2</url>
+        </repository>
+
+        <repository>
+            <id>DCM4CHEE</id>
+            <name>DCM4CHEE Repo</name>
+            <url>https://www.dcm4che.org/maven2/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-structures-r4</artifactId>
+            <version>4.0.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-base -->
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-base</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ca.uhn.hapi.fhir</groupId>
+            <artifactId>hapi-fhir-client</artifactId>
+            <version>5.0.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.zkoss.zkspringboot</groupId>
+            <artifactId>zkspringboot-starter</artifactId>
+            <type>pom</type>
+            <version>${zkspringboot.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.zkoss.calendar/calendar -->
+        <dependency>
+            <groupId>org.zkoss.calendar</groupId>
+            <artifactId>calendar</artifactId>
+            <version>2.1.5</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.dcm4che.tool/dcm4che-tool-storescp -->
+        <dependency>
+            <groupId>org.dcm4che.tool</groupId>
+            <artifactId>dcm4che-tool-storescp</artifactId>
+            <version>5.22.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--SPRING SECURITY-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>2.1.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
